@@ -49,16 +49,12 @@ public class CrimelessRepositoryImpl implements CrimelessRepository {
         return (pos != null) ? true : false;
     }
 
-    @Override
-    public boolean getActive(String userId) {
-        Position pos = getPositionByUserId(userId);
-        return gameServices.isActive(pos);
-    }
+
 
     @Override
     public List<Position> getActivePlayers() {
         List<Position> positions = mongoTemplate.findAll(Position.class);
-        positions = positions.stream().filter(a -> gameServices.isActive(a)).collect(Collectors.toList());
+        //positions = positions.stream().filter(a -> gameServices.isActive(a)).collect(Collectors.toList());
         return positions;
     }
 

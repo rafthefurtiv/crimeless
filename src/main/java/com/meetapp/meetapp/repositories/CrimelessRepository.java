@@ -13,7 +13,6 @@ public interface CrimelessRepository {
 
     boolean getExists(String userId);
 
-    boolean getActive(String userId);
 
     List<Position> getActivePlayers();
 }
